@@ -5,8 +5,7 @@ import { useTheme } from "next-themes";
 import { FormControlLabel } from "@mui/material";
 import { Transition } from "react-transition-group";
 import Portal from "../../../portal";
-import { MaterialUISwitch } from "../../../material-ui";
-import { Menu, Close } from "@mui/icons-material";
+import { Menu, Close, DarkMode, LightMode } from "@mui/icons-material";
 import { useUI } from "../../../ui/context";
 
 const MobileNav = () => {
@@ -53,11 +52,8 @@ const MobileNav = () => {
             className='text-center w-full flex justify-center'
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            <FormControlLabel
-              label=''
-              className='mx-auto'
-              control={<MaterialUISwitch checked={theme === "dark"} />}
-            ></FormControlLabel>
+            {theme === "dark" && <DarkMode />}
+            {theme === "light" && <LightMode />}
           </button>
         </div>
       )}
