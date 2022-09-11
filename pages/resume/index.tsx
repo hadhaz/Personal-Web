@@ -22,18 +22,18 @@ const ResumePage: React.FC = () => {
           <blockquote className='tracking-wider text-lg'>
             Web Developer
           </blockquote>
-          <div className='flex items-center justify-center gap-6 bg-white w-full mt-6 py-3'>
-            <Link href=''>
-              <LinkedIn fontSize='small' />
+          <div className='flex items-center justify-center gap-8 bg-white w-full mt-6 py-3'>
+            <Link href='https://id.linkedin.com/in/achmad-hadzami-setiawan-0b7549230'>
+              <LinkedIn fontSize='medium' />
             </Link>
-            <Link href=''>
-              <GitHub fontSize='small' />
+            <Link href='https://github.com/hadhaz'>
+              <GitHub fontSize='medium' />
             </Link>
-            <Link href=''>
-              <Twitter fontSize='small' />
+            <Link href='https://twitter.com/HadzamiS'>
+              <Twitter fontSize='medium' />
             </Link>
-            <Link href=''>
-              <Instagram fontSize='small' />
+            <Link href='https://www.instagram.com/hzmisetiawan'>
+              <Instagram fontSize='medium' />
             </Link>
           </div>
         </div>
