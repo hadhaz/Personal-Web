@@ -16,7 +16,7 @@ interface State {
 const Login: React.FC = () => {
   return (
     <div className='h-full py-12'>
-      <form className='w-[400px] md:w-[500px] mx-auto flex flex-col gap-4'>
+      <form className='w-[350px] md:w-[500px] mx-auto flex flex-col gap-4'>
         <div className='flex flex-col gap-1'>
           <label htmlFor='email'>Email</label>
           <input

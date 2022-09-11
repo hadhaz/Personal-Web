@@ -9,15 +9,14 @@ const Home: NextPage = () => {
 
   function hireFormHandler(event: React.FormEvent) {
     event.preventDefault();
-    alert('OK')
+    alert("OK");
   }
 
   function createStoryHandler(event: React.FormEvent) {
     event.preventDefault();
-    alert('OK')
+    alert("OK");
   }
 
-  
   return (
     <div className={s.root + "z-50"}>
       <Grid container className='font-europa'>
@@ -37,13 +36,16 @@ const Home: NextPage = () => {
             <h2 className='text-center font-semibold mb-3'>
               Share Your Story Now
             </h2>
-            <div className='flex flex-col md:flex-row w-[386px] sm:w-[444px] md:w-[600px]'>
+            <div className='flex flex-col md:flex-row w-[350px] mx-auto sm:w-[444px] md:w-[600px]'>
               <input
                 type='text'
                 className='basis-1/2 w-full dark:bg-slate-800 p-3 border-2 border-yellow-custom placeholder-opacity-50 dark:placeholder-opacity-80 placeholder-slate-900 dark:placeholder-slate-100 dark:border-blue-gray outline-none'
                 placeholder='Your first story title'
               />{" "}
-              <button type='submit' className='basis-1/2 p-3 border-2 border-transparent dark:text-sky-900 font-semibold bg-yellow-custom dark:bg-blue-gray  text-slate-900'>
+              <button
+                type='submit'
+                className='basis-1/2 p-3 border-2 border-transparent dark:text-sky-900 font-semibold bg-yellow-custom dark:bg-blue-gray  text-slate-900'
+              >
                 Create your first story
               </button>
             </div>
@@ -131,7 +133,7 @@ const Home: NextPage = () => {
           </div>
           <div className='w-full pb-10 bg-hero-bottom dark:bg-hero-dark-bottom'>
             <form
-              className='w-[400px] md:w-[500px] mx-auto flex flex-col gap-2'
+              className='w-[350px] md:w-[500px] mx-auto flex flex-col gap-2'
               onSubmit={hireFormHandler}
             >
               <div className='flex flex-col gap-1'>

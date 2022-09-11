@@ -38,8 +38,8 @@ const MobileNav = () => {
   };
 
   return (
-    <div className='p-5 md:hidden flex bg-primary dark:bg-slate-900'>
-      <div className='basis-5/12'>
+    <div className='p-5 md:hidden items-center flex bg-primary dark:bg-slate-900'>
+      <div className='basis-2/5'>
         <h1
           className='tracking-[0.15em] font-semibold'
           onClick={disableHandler}
@@ -48,7 +48,7 @@ const MobileNav = () => {
         </h1>
       </div>
       {mounted && (
-        <div className='basis-1/6 flex justify-center'>
+        <div className='basis-[20%] flex justify-center'>
           <button
             className='text-center w-full flex justify-center'
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -62,7 +62,7 @@ const MobileNav = () => {
         </div>
       )}
 
-      <div className='basis-5/12 flex justify-end'>
+      <div className='basis-2/5 flex justify-end'>
         <button onClick={clickMenuHandler}>
           {!menuActive ? (
             <div className='flex gap-1 items-center'>

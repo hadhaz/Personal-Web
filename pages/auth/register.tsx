@@ -3,7 +3,7 @@ import Link from "next/link";
 const Register: React.FC = () => {
   return (
     <div className='py-12'>
-      <form className='w-[400px] md:w-[500px] mx-auto flex flex-col gap-2'>
+      <form className='w-[350px] md:w-[500px] mx-auto flex flex-col gap-2'>
         <div className='flex flex-col gap-1'>
           <label htmlFor='name'>Name</label>
           <input
