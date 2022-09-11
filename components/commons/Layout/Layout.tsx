@@ -47,6 +47,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = props => {
           content='Achmad Hadzami Setiawan, Universitas Gadjah Mada, Computer Science, Ilmu Komputer, FMIPA, Fakultas MIPA, UGM, SMAN 2 Lamongan, Web Developer, Hadzami, Zami'
         />
         <meta name='author' content='Achmad Hadzami Setiawan' />
+        <meta
+          name='google-site-verification'
+          content='LgLRpbJ7a-3ucx9rRxooQqRSWE9A7eitXzS5-nfB-CA'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
       <Grid
