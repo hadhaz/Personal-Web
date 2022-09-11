@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Europa";
+  src: url("/Europa.woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600;700&display=swap");
+
+* {
+  overflow-x: hidden;
+}
+html {
+  @apply h-full font-europa;
+}
+body {
+  @apply h-full;
+}
+div#__next {
+  @apply h-full;
+}
+main {
+  @apply h-full;
+}
