@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
-import { FormControlLabel } from "@mui/material";
 import { Transition } from "react-transition-group";
 import Portal from "../../../portal";
 import { Menu, Close, DarkMode, LightMode } from "@mui/icons-material";

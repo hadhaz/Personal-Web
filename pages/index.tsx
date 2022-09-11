@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <Grid container className='font-europa'>
         <Grid container item className='bg-hero dark:bg-hero-dark'>
           <div className='flex w-full justify-center pt-12 pb-8 lg:pb-5'>
-            <h1 className='text-xl lg:text-2xl text-center max-w-md font-bold'>
+            <h1 className='text-xl lg:text-2xl text-center w-[90%] sm:w-[444px] md:w-[480px] font-bold'>
               Not only see my journals, You can also share your own lovely story
               here
             </h1>
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
             <h2 className='text-center font-semibold mb-3'>
               Share Your Story Now
             </h2>
-            <div className='flex flex-col md:flex-row w-[350px] mx-auto sm:w-[444px] md:w-[600px]'>
+            <div className='flex flex-col md:flex-row w-[95%] mx-auto sm:w-[444px] md:w-[600px]'>
               <input
                 type='text'
                 className='basis-1/2 w-full dark:bg-slate-800 p-3 border-2 border-yellow-custom placeholder-opacity-50 dark:placeholder-opacity-80 placeholder-slate-900 dark:placeholder-slate-100 dark:border-blue-gray outline-none'
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
                 Create your first story
               </button>
             </div>
-            <div className='text-center w-[386px] sm:w-[444px] md:w-[600px] mt-5 py-10'>
+            <div className='text-center w-[90%] mx-auto sm:w-[444px] md:w-[600px] mt-5 py-10'>
               <blockquote className='md:text-lg'>
                 &quot;The simple act of writing something down lets your brain
                 know you want to remember it. That&apos;s why note-taking is
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
           </div>
           <div className='w-full pb-10 bg-hero-bottom dark:bg-hero-dark-bottom'>
             <form
-              className='w-[350px] md:w-[500px] mx-auto flex flex-col gap-2'
+              className='w-[95%] md:w-[500px] mx-auto flex flex-col gap-2'
               onSubmit={hireFormHandler}
             >
               <div className='flex flex-col gap-1'>
