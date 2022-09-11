@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <Main/>
+          <Main />
           <div id='modal-overlay'></div>
           <NextScript />
         </body>
