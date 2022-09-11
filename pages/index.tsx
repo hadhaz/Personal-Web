@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
-import { useTheme } from "next-themes";
 import s from "./index.module.css";
 import { Grid } from "@mui/material";
 import Image from "next/image";
+import { TouchApp } from "@mui/icons-material";
 
 const Home: NextPage = () => {
-  const { theme, setTheme } = useTheme();
-
   function hireFormHandler(event: React.FormEvent) {
     event.preventDefault();
     alert("OK");
@@ -20,20 +18,28 @@ const Home: NextPage = () => {
   return (
     <div className={s.root + "z-50"}>
       <Grid container className='font-europa'>
-        <Grid container item className='bg-hero dark:bg-hero-dark'>
-          <div className='flex w-full justify-center pt-12 pb-8 lg:pb-5'>
+        <Grid
+          container
+          item
+          className='bg-hero dark:bg-hero-dark max-w-7xl mx-auto'
+        >
+          <div className='flex w-full justify-center pt-12 pb-10 lg:pb-5 mb-4'>
             <h1 className='text-xl lg:text-2xl text-center w-[90%] sm:w-[444px] md:w-[480px] font-bold'>
               Not only see my journals, You can also share your own lovely story
               here
             </h1>
           </div>
-          <div className='relative mx-auto z-20 w-[330px] h-[250px] lg:w-[400px] lg:h-[365px]'>
+          <div className='relative mb-5 mx-auto z-20 w-[330px] h-[250px] lg:w-[400px] lg:h-[365px]'>
             <Image src={"/hero.svg"} layout='fill' alt='share story images' />
           </div>
         </Grid>
-        <Grid container item className='pb-8 bg-white dark:bg-slate-800'>
-          <form className='mx-auto' onSubmit={createStoryHandler}>
-            <h2 className='text-center font-semibold mb-3'>
+        <Grid
+          container
+          item
+          className='pb-8 bg-white dark:bg-slate-800 max-w-7xl mx-auto'
+        >
+          <form className='mx-auto mt-3' onSubmit={createStoryHandler}>
+            <h2 className='text-center font-semibold mb-4'>
               Share Your Story Now
             </h2>
             <div className='flex flex-col md:flex-row w-[95%] mx-auto sm:w-[444px] md:w-[600px]'>
@@ -49,7 +55,7 @@ const Home: NextPage = () => {
                 Create your first story
               </button>
             </div>
-            <div className='text-center w-[90%] mx-auto sm:w-[444px] md:w-[600px] mt-5 py-10'>
+            <div className='text-center w-[90%] mx-auto sm:w-[444px] md:w-[600px] mt-9 py-10'>
               <blockquote className='md:text-lg'>
                 &quot;The simple act of writing something down lets your brain
                 know you want to remember it. That&apos;s why note-taking is
@@ -58,8 +64,12 @@ const Home: NextPage = () => {
             </div>
           </form>
         </Grid>
-        <Grid item container className='border-y bg-white dark:bg-slate-800'>
-          <Grid item xs={12} md={6} className='md:border-r'>
+        <Grid
+          item
+          container
+          className='max-w-7xl mx-auto border-y bg-white dark:bg-slate-800'
+        >
+          <Grid item xs={12} md={6} className='md:border-rmd:py-20'>
             <div className='flex flex-col gap-5 w-[90%] md:w-[70%] border-b md:border-none py-10 mx-auto'>
               <h1 className='text-inconsolata font-bold text-lg md:text-xl'>
                 Hi, I&apos;m Hadzami.
@@ -67,8 +77,8 @@ const Home: NextPage = () => {
               <p>
                 I&apos;m Computer Science Students at Gadjah Mada University
                 entering my 3rd Semester and currently active contribute at
-                Internal & External Division of HIMAKOM UGM and Software
-                Reseacrh & Development Staff at Komatik.
+                HIMAKOM UGM and Software Reseacrh & Development Staff at
+                Komatik.
               </p>
               <p>
                 Currently, I&apos;m strongly dedicate my time for learning
@@ -83,7 +93,7 @@ const Home: NextPage = () => {
               </p>
             </div>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="md:py-20">
             <div className='flex flex-col gap-5 w-[90%] md:w-[70%] py-10 mx-auto text-sm'>
               <div className='flex flex-col gap-2'>
                 <h2 className='font-semibold text-lg md:text-xl mb-2'>
@@ -109,7 +119,7 @@ const Home: NextPage = () => {
                 </article>
               </div>
               <div className='flex flex-col gap-2'>
-                <h2 className='font-semibold text-xl xl:text-2xl mt-4 mb-1'>
+                <h2 className='font-semibold text-lg md:text-xl mt-4 mb-1'>
                   Browse my popular friend&apos;s story:
                 </h2>
                 <article className='underline'>
@@ -126,9 +136,9 @@ const Home: NextPage = () => {
           </Grid>
         </Grid>
         <Grid container item className='dark:bg-slate-800'>
-          <div className='w-full py-12'>
+          <div className='w-full py-8 md:py-12'>
             <h1 className='text-center text-xl md:text-2xl font-semibold'>
-              Do you want to hire me?
+              Get in Touch <TouchApp/>
             </h1>
           </div>
           <div className='w-full pb-10 bg-hero-bottom dark:bg-hero-dark-bottom'>
@@ -164,12 +174,12 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className='flex flex-col gap-1'>
-                <label htmlFor='institution'>Institution</label>
+                <label htmlFor='institution'>Institution/Organization</label>
                 <input
                   type='text'
                   id='institution'
                   className='bg-transparent border-2 border-yellow-custom dark:border-blue-gray w-full outline-none p-1 px-2'
-                  placeholder='Universitas Gadjah Mada'
+                  placeholder='XYZ Universitas Gadjah Mada'
                 />
               </div>
               <div className='flex flex-col gap-1'>
@@ -184,7 +194,7 @@ const Home: NextPage = () => {
                 type='submit'
                 className='bg-yellow-custom dark:bg-blue-gray p-2 dark:text-sky-900 font-bold rounded-sm mt-2'
               >
-                Hire
+                Send to Hadzami
               </button>
             </form>
           </div>

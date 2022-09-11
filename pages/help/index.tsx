@@ -31,7 +31,7 @@ const faq = [
 
 const Help: React.FC = () => {
   return (
-    <Grid container className='p-16 gap-4' rowSpacing={4}>
+    <Grid container className='py-16 px-2 sm:px-4 md:px-16 gap-4' rowSpacing={4}>
       {faq.map(item => {
         return (
           <Grid container key={item.id} className='border p-2 gap-1'>

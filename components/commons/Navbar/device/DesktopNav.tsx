@@ -41,7 +41,7 @@ const DesktopNav = () => {
   };
 
   return (
-    <div className='px-10 py-5 hidden md:flex bg-primary dark:bg-slate-900'>
+    <div className='max-w-7xl mx-auto px-10 py-5 hidden md:flex bg-primary dark:bg-slate-900'>
       <div className='basis-1/3'>
         <h1 className='tracking-[0.15em] font-semibold'>
           <Link href='/'>HADZAMI</Link>
@@ -83,7 +83,7 @@ const DesktopNav = () => {
       <div className='basis-1/3 flex justify-end items-center'>
         <h3
           onClick={hackHandler}
-          className='dark:bg-cream py-1 px-3 dark:text-slate-800 bg-yellow-custom text-slate-800 font-semibold rounded-md'
+          className='dark:bg-cream cursor-pointer py-1 px-3 dark:text-slate-800 bg-yellow-custom text-slate-800 font-semibold rounded-md'
         >
           Hack
         </h3>

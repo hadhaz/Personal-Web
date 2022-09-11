@@ -20,7 +20,7 @@ const Hack: React.FC = () => {
         container
         item
         onClick={loginHandler}
-        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 bg-yellow-transparent hover:bg-yellow-custom py-2 px-4 rounded-sm'
+        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 hover:translate-x-1 bg-yellow-custom py-2 px-4 rounded-sm'
       >
         <button>Login</button>
       </Grid>
@@ -28,7 +28,7 @@ const Hack: React.FC = () => {
         container
         item
         onClick={registerHandler}
-        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 bg-yellow-transparent hover:bg-yellow-custom py-2 px-4 rounded-sm'
+        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 hover:translate-x-1 bg-yellow-custom py-2 px-4 rounded-sm'
       >
         <button>Register</button>
       </Grid>
@@ -36,7 +36,7 @@ const Hack: React.FC = () => {
         container
         item
         onClick={helpHandler}
-        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 bg-yellow-transparent hover:bg-yellow-custom py-2 px-4 rounded-sm'
+        className='hover:text-slate-900 dark:text-white justify-center dark:hover:text-slate-700 hover:translate-x-1 bg-yellow-custom py-2 px-4 rounded-sm'
       >
         <button>Help Center</button>
       </Grid>

@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         europa: ["Europa", "Sans-Serif"],
         inconsolata: ["Inconsolata", "monospace"],
+        Poppins: ["Poppins", "cursive"],
       },
       backgroundColor: {
         primary: "#f9f8f4",
@@ -16,7 +17,8 @@ module.exports = {
         "blue-gray": "#99b0b0",
         taupe: "#b5b2b0",
         cream: "#fcfaf0",
-        "yellow-transparent" : "rgba(248, 205, 95, .5)"
+        "yellow-transparent": "rgba(248, 205, 95, .5)",
+        secondary: "#e6dace",
       },
       animation: {
         in: "in 500ms forwards",
@@ -32,6 +34,10 @@ module.exports = {
           "linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 1) 25%, rgba(30, 41, 59, 1) 65%, rgba(30, 41, 59, 1) 100%)",
         "hero-dark-bottom":
           "linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(30, 41, 59, 1) 60%, rgba(15, 23, 42, 1) 85%, rgba(15, 23, 42, 1) 100%)",
+        "resume-mobile":
+          "linear-gradient(360deg, #e6dace 0%, #e6dace 55%, rgba(255, 255, 255, 1) 55%, rgba(255,255,255,1) 100%)",
+        resume:
+          "linear-gradient(90deg, #e6dace 0%, #e6dace 45%, rgba(255, 255, 255, 1) 45%, rgba(255,255,255,1) 100%)",
       },
       keyframes: {
         in: {
