@@ -1,32 +1,32 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
+import { NextApiRequest, NextApiResponse } from "next";
+import sendgrid from "@sendgrid/mail";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  const { name, email, phone, messages, organization } = req.body;
+class CustomError {
+  statusCode: number;
+  message: string;
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL,
-      pass: process.env.NEXT_PUBLIC_PASSWORD,
-    },
-  });
+  constructor(statusCode: number, message: string) {
+    this.statusCode = statusCode;
+    this.message = message;
+  }
+}
 
-  const mailOptions = {
-    from: process.env.NEXT_PUBLIC_EMAIL,
-    to: ["achmad.had2003@mail.ugm.ac.id", email],
-    subject: "I'm interest work with you",
-    html: `<html><body><h2>Hi, I'm ${name} from ${organization}</h2><p>${messages}</p><p>If you also interest to work together you can reach me by my phone ${phone} or my email ${email}</p></body></html>`,
-  };
+async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
+  const { name: subject, email, phone, organization, messages } = req.body;
+  try {
+    await sendgrid.send({
+      to: "achmad.had2003@mail.ugm.ac.id", // Your email where you'll receive emails
+      from: "hadzami.id@gmail.com",
+      subject: `${subject} from ${organization}`,
+      html: `<div>Messages: ${messages}</div><div>Organization: ${organization}</div><div>Phone Number: ${phone}</div><div>Email: ${email}</div>`,
+    });
+  } catch (error) {
+    if (error instanceof CustomError)
+      return res.status(error.statusCode || 500).json({ error: error.message });
+  }
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-  res.send(req.body);
-};
+  return res.status(200).json({ error: "" });
+}
 
-export default handler;
+export default sendEmail;
