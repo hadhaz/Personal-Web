@@ -1,73 +1,11 @@
 import type { NextPage } from "next";
-import React, { useRef, useState } from "react";
+import React from "react";
 import s from "./index.module.css";
 import { Grid } from "@mui/material";
 import Image from "next/image";
-import { TouchApp } from "@mui/icons-material";
-
-type State = {
-  email: string;
-  name: string;
-  phone: string;
-  organization: string;
-  messages: string;
-};
+import { ContactForm } from "../components/commons/Form";
 
 const Home: NextPage = () => {
-  const [state, setState] = useState<State>({
-    email: "",
-    name: "",
-    phone: "",
-    organization: "",
-    messages: "",
-  });
-
-  function nameChangehandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setState((val: State) => ({ ...state, name: e.target.value }));
-  }
-
-  function emailChangehandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setState((val: State) => ({ ...state, email: e.target.value }));
-  }
-
-  function phoneChangehandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setState((val: State) => ({ ...state, phone: e.target.value }));
-  }
-
-  function organizationChangehandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setState((val: State) => ({ ...state, organization: e.target.value }));
-  }
-
-  function messagesChangehandler(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    setState((val: State) => ({ ...state, messages: e.target.value }));
-  }
-
-  function submitFormHandler(event: React.FormEvent) {
-    event.preventDefault();
-
-    const message = {
-      name: state.name,
-      email: state.email,
-      phone: state.phone,
-      organization: state.organization,
-      messages: state.messages,
-    };
-
-    fetch("/api/email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(message),
-    }).then(() => alert("Email sent"));
-
-    setState({
-      name: "",
-      email: "",
-      phone: "",
-      organization: "",
-      messages: "",
-    });
-  }
-
   function createStoryHandler(event: React.FormEvent) {
     event.preventDefault();
     alert("OK");
@@ -193,85 +131,7 @@ const Home: NextPage = () => {
             </div>
           </Grid>
         </Grid>
-        <Grid container item className='dark:bg-slate-800'>
-          <div className='w-full py-8 md:py-12'>
-            <h1 className='text-center text-xl md:text-2xl font-semibold'>
-              Get in Touch <TouchApp />
-            </h1>
-          </div>
-          <div className='w-full pb-10 bg-hero-bottom dark:bg-hero-dark-bottom'>
-            <form
-              className='w-[95%] md:w-[500px] mx-auto flex flex-col gap-2'
-              onSubmit={submitFormHandler}
-            >
-              <div className='flex flex-col gap-1'>
-                <label htmlFor='name'>Name</label>
-                <input
-                  type='text'
-                  id='name'
-                  className='border-2 bg-transparent border-yellow-custom dark:border-blue-gray w-full outline-none py-1 px-2'
-                  placeholder='Achmad Hadzami Setiawan'
-                  onChange={nameChangehandler}
-                  required
-                  value={state.name}
-                />
-              </div>
-              <div className='flex flex-col gap-1'>
-                <label htmlFor='phone'>Phone</label>
-                <input
-                  type='text'
-                  id='phone'
-                  className='bg-transparent border-2 border-yellow-custom dark:border-blue-gray w-full outline-none p-1 px-2'
-                  placeholder='+628123456789'
-                  onChange={phoneChangehandler}
-                  required
-                  value={state.phone}
-                />
-              </div>
-              <div className='flex flex-col gap-1'>
-                <label htmlFor='email'>Email</label>
-                <input
-                  type='email'
-                  id='email'
-                  className='bg-transparent border-2 border-yellow-custom dark:border-blue-gray w-full outline-none p-1 px-2'
-                  placeholder='hadzami@example.com'
-                  onChange={emailChangehandler}
-                  required
-                  value={state.email}
-                />
-              </div>
-              <div className='flex flex-col gap-1'>
-                <label htmlFor='institution'>Institution/Organization</label>
-                <input
-                  type='text'
-                  id='institution'
-                  className='bg-transparent border-2 border-yellow-custom dark:border-blue-gray w-full outline-none p-1 px-2'
-                  placeholder='XYZ Universitas Gadjah Mada'
-                  onChange={organizationChangehandler}
-                  required
-                  value={state.organization}
-                />
-              </div>
-              <div className='flex flex-col gap-1'>
-                <label htmlFor='text'>Additional Information</label>
-                <textarea
-                  id='text'
-                  onChange={messagesChangehandler}
-                  required
-                  value={state.messages}
-                  className='bg-transparent border-2 border-yellow-custom dark:border-blue-gray w-full outline-none p-1 px-2 h-40'
-                  placeholder='I will hire your for position x with jobdesc y'
-                />
-              </div>
-              <button
-                type='submit'
-                className='bg-yellow-custom dark:bg-blue-gray p-2 dark:text-sky-900 font-bold rounded-sm mt-2'
-              >
-                Send to Hadzami
-              </button>
-            </form>
-          </div>
-        </Grid>
+        <ContactForm />
       </Grid>
     </div>
   );
