@@ -41,9 +41,7 @@ const Form = () => {
   const [error, setError] = useState<ErrorState>(initialErrorState);
   const recaptchaRef = createRef<ReCAPTCHA>();
 
-  function handleChange() {
-
-  }
+  function handleChange() {}
 
   function nameChangehandler(e: React.ChangeEvent<HTMLInputElement>) {
     setError((val: ErrorState) => ({ ...val, nameError: false }));
@@ -71,7 +69,7 @@ const Form = () => {
 
   function nameOnBlurHandler(e: React.ChangeEvent<HTMLInputElement>) {
     const name = e.target.value;
-    if (!validator.isAlpha(name) || name.trim().length === 0) {
+    if (!validator.isEmpty(name)) {
       setError((val: ErrorState) => ({ ...val, nameError: true }));
     }
   }
@@ -97,9 +95,7 @@ const Form = () => {
     }
   }
 
-  function onReCAPTCHAChange() {
-
-  }
+  function onReCAPTCHAChange() {}
 
   function submitFormHandler(event: React.FormEvent) {
     event.preventDefault();
@@ -237,7 +233,7 @@ const Form = () => {
             />
           </div>
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
             onChange={onReCAPTCHAChange}
             ref={recaptchaRef}
           >
