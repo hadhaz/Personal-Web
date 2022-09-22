@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         "yellow-custom": "#f8cd5f",
         "blue-gray": "#99b0b0",
+        "blue-gray-2" : "rgba(160, 176, 185, 1)",
         taupe: "#b5b2b0",
         cream: "#fcfaf0",
         "yellow-transparent": "rgba(248, 205, 95, .5)",
@@ -23,8 +24,8 @@ module.exports = {
       animation: {
         in: "in 500ms forwards",
         out: "out 500ms forwards",
-        "hacked-in": "hacked-in 600ms forwards",
-        "hacked-out": "hacked-out 400ms forwards",
+        "hacked-in": "hacked-in 400ms forwards",
+        "hacked-out": "hacked-out 100ms forwards",
       },
       backgroundImage: {
         hero: "linear-gradient(180deg, rgba(249,248,244,1) 0%, rgba(249,248,244,1) 55%, rgba(255,255,255,1) 65%, rgba(255,255,255,1) 100%)",
@@ -49,14 +50,12 @@ module.exports = {
           "100%": { transform: "translateX(100%)", display: "none" },
         },
         "hacked-in": {
-          "0%": { transform: "translateY(-100%)" },
-          "10%": { transform: "translateY(-40%)" },
-          "45%": { transform: "translateY(-70%)" },
-          "100%": { transform: "translateY(0%)" },
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
         },
         "hacked-out": {
-          "0%": { transform: "translateY(0%)" },
-          "100%": { transform: "translateY(-100%)" },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(100%)" },
         },
       },
     },

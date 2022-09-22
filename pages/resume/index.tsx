@@ -44,7 +44,7 @@ const ResumePage: React.FC = () => {
           <p className='text-lg'>Here&apos;s who I am & what I do</p>
           <a href='/assets/CV_Achmad Hadzami Setiawan.pdf' download>
             <button className='bg-blue-600 hover:bg-white border-2 hover:border-blue-600 border-transparent hover:text-blue-600 text-center font-bold rounded-md py-[5px] my-3 w-fit px-3 text-[13px] text-white font-sans'>
-              Resume
+              Click to Download Resume
             </button>
           </a>
           <blockquote className='mt-4 text-sm flex flex-col gap-2'>

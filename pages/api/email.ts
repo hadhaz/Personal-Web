@@ -21,6 +21,12 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
       subject: `${subject} from ${organization}`,
       html: `<div>Messages: ${messages}</div><div>Organization: ${organization}</div><div>Phone Number: ${phone}</div><div>Email: ${email}</div>`,
     });
+    await sendgrid.send({
+      to: email,
+      from: "hadzami.id@gmail.com",
+      subject: "Thanks for your offer",
+      html: `Thank you for offering me the opportunity to work at ${organization}. I sincerely appreciate your time and consideration. As we move forward, Id like to clarify <h4>${messages}</h4>.`,
+    });
   } catch (error) {
     if (error instanceof CustomError)
       return res.status(error.statusCode || 500).json({ error: error.message });
