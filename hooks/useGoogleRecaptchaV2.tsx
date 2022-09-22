@@ -18,9 +18,8 @@ interface IGoogleReCaptchaV2HookReturn {
   resetReCaptcha: () => void;
 }
 
-type TGoogleReCaptchaV2Hook = (
-  options: IGoogleReCaptchaOptions
-) => IGoogleReCaptchaV2HookReturn;
+type TGoogleReCaptchaV2Hook = (options: IGoogleReCaptchaOptions) => void;
+// ) => IGoogleReCaptchaV2HookReturn;
 
 const ERROR_SCRIPT_NOT_AVAILABLE = "Google ReCaptcha is Not Available";
 const GOOGLE_RECAPTCHA_V3_SCRIPT = "https://www.google.com/recaptcha/api.js";
