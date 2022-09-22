@@ -10,6 +10,9 @@ import { useRouter } from "next/router";
 
 const Layout: React.FC<{ children: React.ReactNode }> = props => {
   const { theme, setTheme } = useTheme();
+  
+  if (!theme) setTheme("light");
+  
   const { isMobileNavActive: menuActive, isFabActive } = useUI();
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
