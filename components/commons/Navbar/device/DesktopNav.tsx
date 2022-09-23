@@ -18,6 +18,7 @@ const DesktopNav = () => {
   const [mounted, setMounted] = useState(false);
   const [sideBar, setSideBar] = useState(false);
   const [hacked, setHacked] = useState(false);
+  const [temporaryLocked, setTemporaryLocked] = useState(false);
   const router = useRouter();
   const { toggleFab, isFabActive } = useUI();
 
@@ -30,7 +31,9 @@ const DesktopNav = () => {
   };
 
   const unSideBarHandler = () => {
-    if (!hacked) setSideBar(false);
+    if (!hacked && !temporaryLocked) {
+      setSideBar(false);
+    }
   };
 
   const hackHandler = () => {
@@ -56,6 +59,11 @@ const DesktopNav = () => {
 
   return (
     <div className='max-w-7xl mx-auto hidden md:flex bg-primary dark:bg-slate-900'>
+      <div
+        className='w-24 2xl:w-96 min-h-[40vh] fixed right-0'
+        onMouseEnter={sideBarHandler}
+        onMouseLeave={unSideBarHandler}
+      ></div>
       <div className='basis-1/3 py-5 pl-10'>
         <h1 className='tracking-[0.15em] font-semibold'>
           <Link href='/'>HADZAMI</Link>
@@ -96,12 +104,14 @@ const DesktopNav = () => {
       </div>
       <div className='h-full basis-1/3 flex justify-end items-center'>
         <div
-          className='py-5 w-52 text-right pr-10'
-          onMouseOver={sideBarHandler}
-          onMouseOut={unSideBarHandler}
-          onClick={hackHandler}
+          className='z-50 py-5 w-52 text-right pr-10'
+          onMouseEnter={sideBarHandler}
+          onMouseLeave={unSideBarHandler}
         >
-          <h3 className=' cursor-pointer py-1 px-3'>
+          <h3
+            className='z-50 cursor-pointer py-1 px-3'
+            onClick={hackHandler}
+          >
             {hacked ? (
               <Lock />
             ) : sideBar ? (
@@ -127,7 +137,7 @@ const DesktopNav = () => {
                   : state === "exited"
                   ? "hidden"
                   : ""
-              } w-52 flex flex-col gap-5 pt-2 pb-8 top-16 right-0 absolute shadow-sm shadow-black dark:shadow-cream text-center rounded-sm dark:bg-primary bg-slate-800 text-slate-100 dark:text-sky-900 font-semibold`}
+              } w-52 2xl:w-80 flex flex-col gap-5 pt-2 pb-8 top-16 right-0 absolute shadow-sm shadow-black dark:shadow-cream text-center rounded-sm dark:bg-primary bg-slate-800 text-slate-100 dark:text-sky-900 font-semibold`}
             >
               <div className='flex justify-end px-2 w-full'></div>
               <div className='border-b-2 border-transparent hover:border-yellow-custom'>

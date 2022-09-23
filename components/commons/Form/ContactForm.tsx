@@ -123,6 +123,8 @@ const Form = () => {
       organization: "",
       messages: "",
     });
+
+    setIsChecked(false);
   }
 
   const key = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";

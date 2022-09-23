@@ -47,7 +47,7 @@ module.exports = {
         },
         out: {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(100%)", display: "none" },
+          "100%": { transform: "translateX(100%)" },
         },
         "hacked-in": {
           "0%": { transform: "translateX(100%)" },

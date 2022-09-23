@@ -1,18 +1,12 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import {
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
 import Link from "next/link";
 import React from "react";
+
 
 interface State {
   password: string;
   showPassword: boolean;
 }
+
 const Login: React.FC = () => {
   return (
     <div className='h-full py-12'>
