@@ -1,15 +1,16 @@
 import type { NextPage } from "next";
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./index.module.css";
 import { Grid } from "@mui/material";
 import Image from "next/image";
 import { ContactForm } from "../components/commons/Form";
 
-const Home: NextPage = () => {
+export default function NextPage ()  {
   function createStoryHandler(event: React.FormEvent) {
     event.preventDefault();
     alert("OK");
   }
+
 
   return (
     <div className={s.root + "z-50"}>
@@ -63,7 +64,7 @@ const Home: NextPage = () => {
         <Grid
           item
           container
-          className='mx-auto border-y bg-white dark:bg-slate-800'
+          className= mx-auto border-y bg-white dark:bg-slate-800'
         >
           <Grid item xs={12} md={6} className='md:border-r md:py-20'>
             <div className='flex flex-col gap-5 w-[90%] md:w-[70%] border-b md:border-none py-10 mx-auto'>
@@ -136,5 +137,3 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
-export default Home;

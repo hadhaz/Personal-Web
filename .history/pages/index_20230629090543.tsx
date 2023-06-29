@@ -1,15 +1,19 @@
 import type { NextPage } from "next";
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./index.module.css";
 import { Grid } from "@mui/material";
 import Image from "next/image";
 import { ContactForm } from "../components/commons/Form";
 
-const Home: NextPage = () => {
+export default function NextPage  ()  {
   function createStoryHandler(event: React.FormEvent) {
     event.preventDefault();
     alert("OK");
   }
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div className={s.root + "z-50"}>
@@ -17,7 +21,7 @@ const Home: NextPage = () => {
         <Grid
           container
           item
-          className='bg-hero dark:bg-hero-dark mx-auto'
+          className='bg-hero dark:bg-hero-dark max-w-7xl mx-auto'
         >
           <div className='flex w-full justify-center pt-12 pb-10 lg:pb-5 mb-4'>
             <h1 className='text-xl lg:text-2xl text-center w-[90%] sm:w-[444px] md:w-[480px] font-bold'>
@@ -32,7 +36,7 @@ const Home: NextPage = () => {
         <Grid
           container
           item
-          className='pb-8 bg-white dark:bg-slate-800 mx-auto'
+          className='pb-8 bg-white dark:bg-slate-800 max-w-7xl mx-auto'
         >
           <form className='mx-auto mt-3' onSubmit={createStoryHandler}>
             <h2 className='text-center font-semibold mb-4'>
@@ -63,7 +67,7 @@ const Home: NextPage = () => {
         <Grid
           item
           container
-          className='mx-auto border-y bg-white dark:bg-slate-800'
+          className='max-w-7xl mx-auto border-y bg-white dark:bg-slate-800'
         >
           <Grid item xs={12} md={6} className='md:border-r md:py-20'>
             <div className='flex flex-col gap-5 w-[90%] md:w-[70%] border-b md:border-none py-10 mx-auto'>
@@ -136,5 +140,3 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
-export default Home;

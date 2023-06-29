@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         <Grid
           item
           container
-          className='mx-auto border-y bg-white dark:bg-slate-800'
+          className='mx-auto max-w-7xl border-y bg-white dark:bg-slate-800'
         >
           <Grid item xs={12} md={6} className='md:border-r md:py-20'>
             <div className='flex flex-col gap-5 w-[90%] md:w-[70%] border-b md:border-none py-10 mx-auto'>
